@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clínica R&S</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style-index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="/assets/images/LogoPestañaBlanco.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._._._.
+
+                NAVBAR SECTION
+
+    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._. -->
+
+    <div id="INICIO" style="height: 96px;"></div>
+
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-light"
+      style="background-color: rgba(255, 255, 255)"
+    >
+      <div class="container-md">
+        <a class="navbar-brand p-0 m-0" href="#INICIO"
+          ><img
+            src="/assets/images/LogoLargo.png"
+            alt="logo clinica R&S"
+            style="height: 80px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-lg-flex justify-content-end " id="navbarNavAltMarkup">
+          <div class="navbar-nav d-flex">
+            <a class="mx-3 menuPag letraContraste py-2 ps-4" style="text-decoration: none; color: var(--colorLetra)" aria-current="page" href="#">La Institución</a>
+            <a class="mx-3 menuPag letraContraste py-2 ps-4" style="text-decoration: none; color: var(--colorLetra)" aria-current="page" href="#">Soy Paciente</a>
+            <a class="mx-3 menuPag letraContraste py-2 ps-4" style="text-decoration: none; color: var(--colorLetra)" aria-current="page" href="#">Soy Profesional</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._._._.
+
+              MAIN SECTION
+
+    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._. -->
+
+    <main>
+      <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+      ._._._._._._._._._._._._._._._._._._._.
+                CAROUSEL SECTION
+      .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+      ._._._._._._._._._._._._._._._._._. -->
+
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="/assets/images/index/1.png"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/assets/images/index/2.png"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Consulta nuestra cartilla de médicos</h5>
+              <p>
+                Contamos con los profesionales de la salud más calificados de la región.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/assets/images/index/3.png"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Visita nuestra cartilla de prestaciones</h5>
+              <p>
+                Nuestra tecnología de punta garantiza la mejor experiencia clínica y presición diagnóstica.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div
+        class="container"
+      >
+        <div class="row">
+          <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+          ._._._._._._._._._._._._._._._._._._._.
+           
+                  COL PRINCIPAL SECTION
+           
+          .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+          ._._._._._._._._._._._._._._._._._. -->
+
+          <div class="col-sm-12 col-md-9 px-2" >
+            <div class="row m-3 py-3" style="background: var(--color6)"> <div class="row"><h3 class="titulo">Servicios</h3></div>
+            <div class="row d-flex justify-content-center align-content-center">
+
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-ambulance"></i>
+                </div>
+                <div class="card-title">Sala de emergencias</div>
+                <div class="card-content">
+                  Contamos con servicio de guardia las 24hs y dos ambulancias propias de la institución para traslados programados y no programados.
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                <div class="card-title">Consultorios clínicos</div>
+                <div class="card-content">
+                  Más de 24 profesionales de diferentes especialidades atienden en nuestra torre de consultorios por medio de turnos programados, con y sin obra social.
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-tooth"></i>
+                </div>
+                <div class="card-title">Odontología</div>
+                <div class="card-content">
+                  Trabajamos con odontólogos dedicados a una variedad de especialidades: endodoncia, periodoncia, cirugía odontológica, ortodoncia, entre otros.
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-baby"></i>
+                </div>
+                <div class="card-title">Unidad pediátrica</div>
+                <div class="card-content">
+                  Atención con profesionales especializados en el área de neonatología, pediatría y atención ginecológica y obstétrica para madres y embarazadas.
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-bacteria"></i>
+                </div>
+                <div class="card-title">Análisis clínicos</div>
+                <div class="card-content">
+                  Realizamos análisis de Hematología, Bacteriología, Coagulograma, Anemia, Diabetes, Función tiroides, Marcadores oseos y tumorales, etc.
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-biohazard"></i>
+                </div>
+                <div class="card-title">Imagenología</div>
+                <div class="card-content">
+                  Nuestros profesionales tienen acceso a diagnóstico por imágenes de la mano de un equipamiento de última generación en materia de radiación y ultrasonido. 
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-band-aid"></i>
+                </div>
+                <div class="card-title">Cirugías programadas</div>
+                <div class="card-content">
+                  En nuestras instalaciones puede encontrarse un servicio de quirófano con tres salas independientes y totalmente equipadas en constante actividad.
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-procedures"></i>
+                </div>
+                <div class="card-title">Internación</div>
+                <div class="card-content">
+                  Como servicio adicional a cirugía, contamos con un hospital de día en el que los pacientes pueden recuperarse las horas posteriores a la intervención.
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+              <div class="card">
+                <div class="card-icon">
+                  <i class="fas fa-head-side-mask"></i>
+                </div>
+                <div class="card-title">Area de aislamiento</div>
+                <div class="card-content">
+                  Para contribuir a los esfuerzos para contener la situación que se vive actualmente con el COVID-19, se inauguraron 9 salas con total aislación.
+                </div>
+                <div class="card-footer"><a href="" style="text-decoration: none; color: var(--colorLetra)" class="letraContraste">Saber más</a></div>
+              </div>
+
+            </div>
+            </div>
+            
+            <div class="row m-3" py-3 style="background: var(--color6)"> <div class="row"><h3 class="titulo">Novedades</h3></div>
+            <div class="row d-flex justify-content-center align-items-center">
+
+              <div class="col-md-6">
+                <div class="cardIndex my-3 noticia2">
+                  <div class="card-contentIndex">
+                    <h2 class="card-titleIndex">Ensayo clínico</h2>
+                    <p class="card-bodyIndex">
+                      La Clínica R&S participará en un proyecto de investigación que se realizará sobre una nueva vacuna contra el COVID-19.
+                    </p>
+                    <a
+                      href="/pages/entrada-de-blog-3.html"
+                      class="btn btn-outline-light"
+                      >Seguir leyendo</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardIndex my-3 noticia3">
+                  <div class="card-contentIndex">
+                    <h2 class="card-titleIndex">Imágenes última generación</h2>
+                    <p class="card-bodyIndex">
+                      Incorporamos un nuevo ecógrafo, diseñado para proporcionar una increíble experiencia clínica y la mejor precisión diagnóstica.
+                    </p>
+                    <a
+                      href="/pages/entrada-de-blog-3.html"
+                      class="btn btn-outline-light"
+                      >Seguir leyendo</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardIndex my-3 noticia4">
+                  <div class="card-contentIndex">
+                    <h2 class="card-titleIndex">¡Bebé número 500!</h2>
+                    <p class="card-bodyIndex">
+                      Alcancamos el nacimiento número 500 en nuestra institución, de la mano de uno de nuestros médicos fundadores.
+                    </p>
+                    <a
+                      href="/pages/entrada-de-blog-3.html"
+                      class="btn btn-outline-light"
+                      >Seguir leyendo</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardIndex my-3 noticia1">
+                  <div class="card-contentIndex">
+                    <h2 class="card-titleIndex">Cirugía Ambulatoria</h2>
+                    <p class="card-bodyIndex">
+                      Cirugía alta ambulatoria, la más moderna intervención quirúrgica mínimamente invasiva en el mundo llegó a nuestra institución.
+                    </p>
+                    <a
+                      href="/pages/entrada-de-blog-3.html"
+                      class="btn btn-outline-light"
+                      >Seguir leyendo</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end mb-3">
+                <a
+                href="/pages/error404-1.html"
+                class="btn btn-outline-secondary w-25"
+                >Ver todas las noticias</a
+                >
+              </div>
+              
+            </div>
+            </div>
+
+          </div>
+
+          <br />
+
+          <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+          ._._._._._._._._._._._._._._._._._._._.
+           
+                  COLUMNA ASIDE SECTION
+           
+          .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+          ._._._._._._._._._._._._._._._._._. -->
+
+          <div class="col-sm-12 col-md-3 px-4 my-3" style="background: var(--color6)">
+            <div class="asideIndex d-flex flex-column">
+              <form class="d-flex my-5">
+                <input
+                  class="form-control me-2 busquedaIndex"
+                  type="search"
+                  placeholder="Buscar en el sitio..."
+                  aria-label="Search"
+                />
+                <a
+                  href="/pages/error404-1.html"
+                  class="btn btn-outline-secondary"
+                  >Buscar</a
+                >
+              </form>
+
+              <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+              ._._._._._._._._._._._._._._._._._._._.
+                        PUBLICIDAD SECTION
+              .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+              ._._._._._._._._._._._._._._._._._. -->
+
+              <a href=""><img src="/assets/images/index/Publicidad1.png" alt="Publicidad: Dona sangre, salva una vida" class="d-block w-100 mb-5"></a>
+              <a href=""><img src="/assets/images/index/Publicidad2.png" alt="Publicidad: Maraton anual por la inclusion" class="d-block w-100 mb-5"></a>
+              <a href=""><img src="/assets/images/index/Publicidad3.png" alt="Publicidad: Estamos contratando, dejanos tu CV" class="d-block w-100 mb-5"></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._._._.
+
+              FOOTER SECTION
+
+    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._. -->
+
+    <footer class="text-white" style="background-color: var(--colorLetra)">
+      <div class="container text-center py-3">
+        <nav class="row align-items-center">
+          <div class="col-md footerRight">
+            <div class="my-1" style="font-size: 1.1rem;">Contacto</div>
+            <div style="font-size: 0.85rem;">
+              <i class="fas fa-map-marker-alt"></i> 9 de Julio 279 – San Miguel de Tucumán
+            </div>
+            <div class="my-1" style="font-size: 0.85rem;">
+            <i class="fas fa-phone-alt"></i> +54 (381) 4502600
+            </div>
+            <div class="my-1" style="font-size: 1.1rem;">Nuestras redes sociales</div>
+            <div>
+              <a
+                class="letraContraste"
+                href="https://www.facebook.com/"
+                style="text-decoration: none; color: rgb(255, 255, 255);font-size: 0.85rem;"
+                target="_blank"
+                ><i class="fab fa-facebook"></i> Facebook</a
+              >
+            </div>
+            <div>
+              <a
+                class="letraContraste"
+                href="https://twitter.com/"
+                style="text-decoration: none; color: rgb(255, 255, 255);font-size: 0.85rem;"
+                target="_blank"
+                ><i class="fab fa-twitter-square"></i> Twitter</a
+              >
+            </div>
+            <div>
+              <a
+                class="letraContraste"
+                href="https://www.instagram.com/"
+                style="text-decoration: none; color: rgb(255, 255, 255);; font-size: 0.85rem;"
+                target="_blank"
+                ><i class="fab fa-instagram"></i> Instagram</a
+              >
+            </div>
+          </div>
+          <div class="col-md d-none d-md-block">
+            <a href="#INICIO"
+              ><img
+                src="/assets/images/LogoCuadrado.png"
+                alt="logo clinica R&S"
+                style="height: 200px"
+            /></a>
+          </div>
+          <div class="col-md d-none d-lg-block footerLeft">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1754617155902!2d-65.20787508491479!3d-26.834370996404566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0a1fc920d0d%3A0xca77ed30bc1ec683!2sCl%C3%ADnica%20Mayo%20de%20UMCB!5e0!3m2!1ses!2sar!4v1626814427052!5m2!1ses!2sar"
+              class="w-50"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+            <div style="font-size: 1.1rem;">Nuestra ubicación</div>
+          </div>
+        </nav>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+<!-- 
+console.log(new Intl.DateTimeFormat('es-ES', { dateStyle: 'full', timeStyle: 'long' }).format(date)); -->     
