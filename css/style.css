@@ -15,7 +15,7 @@
   --color5: rgba(4, 34, 37, 0.8);
   --color6: rgba(255, 255, 255, 0.7);
   --colorLetra: rgb(4, 34, 37);
-  --colorContraste: rgb(228, 18, 18);
+  --colorContraste: rgb(228, 43, 18);
   --gradiente: linear-gradient(
     90grad,
     var(--color1),
@@ -97,7 +97,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30%;
   margin: 15px;
   transition: transform 500ms ease;
 }
@@ -122,14 +121,24 @@ body {
     transform: scale(1.01);
   }
 }
-@media (max-width: 520px) {
+@media (max-width: 991px) {
   .card {
-    width: 80%;
+    width: 60%;
   }
 }
-@media (min-width: 521) and (max-width: 991px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .card {
     width: 45%;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px){
+  .card {
+    width: 40%;
+  }
+}
+@media (min-width: 1400px) {
+  .card {
+    width: 30%;
   }
 }
 
@@ -165,6 +174,7 @@ body {
   --padding: 1.5rem;
   padding: var(--padding);
   background: linear-gradient(rgba(0, 0, 0, 0), var(--color5) 40%, black);
+  font-size: 1rem;
 }
 .card-titleIndex {
   position: relative;
@@ -179,6 +189,13 @@ body {
   height: 1px;
   width: calc(100% + var(--padding));
   background: white;
+}
+.card-footerIndex {
+  padding: 10px;
+  border-top: 0.5px solid white;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
 }
 @media (hover) {
   .cardIndex:hover,
@@ -249,4 +266,39 @@ body {
 }
 .footerRight {
   border-right: 1px solid white;
+}
+
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+
+          PAGINA 404
+
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+*/
+
+.body404 {
+  background: #CCFDFF url(/assets/images/404/Error404.png) no-repeat fixed center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media (max-width: 1100px) {
+  .body404 {
+    background: #CCFDFF url(/assets/images/404/Error404.png) no-repeat fixed center/130%;
+  }
+}
+
+.boton404 {
+  transition: transform 500ms ease;
+}
+
+@media (hover) {
+  .boton404:hover,
+  .boton404:focus-within, 
+  .boton404:active {
+    transform: scale(1.1);
+  }
 }
