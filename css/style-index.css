@@ -14,7 +14,7 @@
   --color4: rgba(131, 255, 131, 0.308);
   --color5: rgba(4, 34, 37, 0.8);
   --color6: rgba(255, 255, 255, 0.7);
-  --colorLetra:  rgb(4, 34, 37);
+  --colorLetra: rgb(4, 34, 37);
   --colorContraste: rgb(228, 18, 18);
   --gradiente: linear-gradient(
     90grad,
@@ -26,9 +26,10 @@
 }
 
 body {
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   background: var(--gradiente);
 }
+
 /*
 .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ._._._._._._._._._._._._._._._._._.
@@ -62,25 +63,30 @@ body {
 */
 
 .carousel-caption {
-  font-size: 1.2rem;
-  margin: bottom 70px; 
-}
-/*
-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-            Servicios
-._._._._._._._._._._._._._._._._._.
-*/
-.carousel-caption {
   text-shadow: -1px -1px 4px rgba(0, 0, 0, 0.4), -1px 1px 4px rgba(0, 0, 0, 0.4),
-  1px 1px 4px rgba(0, 0, 0, 0.4), 1px -1px 4px rgba(0, 0, 0, 0.4);
+    1px 1px 4px rgba(0, 0, 0, 0.4), 1px -1px 4px rgba(0, 0, 0, 0.4);
+}
+.carousel-caption > h5 {
+  font-size: 1.5rem;
+}
+.carousel-caption > p {
+  font-size: 1.2rem;
 }
 
 .titulo {
   color: var(--colorLetra);
   font-size: 3rem;
-  padding: 1rem;
+  padding: 2rem;
   border-bottom: 1px solid var(--colorLetra);
 }
+
+/* LAS TERJETAS DE LA SECCION "SERVICIOS" (Y TODO LOS COMPONENTES QUE TIENEN DENTRO) ESTAN NOMBRADAS CON LA CLASE "card", MIENTRAS QUE LAS TARJETAS DE LA SECCION "NOVEDADES" ESTAN REFERENCIADAS CON LA CLASE "cardIndex"*/
+
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+            Servicios
+._._._._._._._._._._._._._._._._._.
+*/
 
 .card {
   background: rgb(231, 231, 231);
@@ -102,7 +108,6 @@ body {
 .card .card-title {
   font-size: 1.4rem;
 }
-
 .card .card-footer {
   margin-top: 25px;
   padding: 10px;
@@ -111,25 +116,18 @@ body {
   text-align: center;
   background-color: rgb(231, 231, 231);
 }
-
 @media (hover) {
   .card:hover,
   .card:focus-within {
     transform: scale(1.01);
   }
-
-  .card-footer:hover,
-  .card-footer:focus-within {
-    border-top: 1px solid var(--colorContraste);
-  }
 }
-
 @media (max-width: 520px) {
   .card {
     width: 80%;
   }
 }
-@media (min-width:521) and  (max-width: 991px) {
+@media (min-width: 521) and (max-width: 991px) {
   .card {
     width: 45%;
   }
@@ -154,11 +152,6 @@ body {
   background-image: url(/assets/images/index/Noticia4.png);
 }
 
-/*
-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-          TARJETA ANIMADA
-._._._._._._._._._._._._._._._._._.
-*/
 .cardIndex {
   color: white;
   background-size: cover;
@@ -168,23 +161,16 @@ body {
 
   transition: transform 500ms ease;
 }
-
 .card-contentIndex {
   --padding: 1.5rem;
   padding: var(--padding);
-  background: linear-gradient(
-    rgba(0, 0, 0, 0),
-    var(--color5) 40%,
-    black
-  );
+  background: linear-gradient(rgba(0, 0, 0, 0), var(--color5) 40%, black);
 }
-
 .card-titleIndex {
   position: relative;
   width: max-content;
   font-size: 1.4rem;
 }
-
 .card-titleIndex::after {
   content: "";
   position: absolute;
@@ -194,7 +180,6 @@ body {
   width: calc(100% + var(--padding));
   background: white;
 }
-
 @media (hover) {
   .cardIndex:hover,
   .cardIndex:focus-within {
@@ -240,9 +225,6 @@ body {
           COLUMNA ASIDE
 ._._._._._._._._._._._._._._._._._.
 */
-/* .asideIndex {
-  top: 81px;
-} */
 
 .busquedaIndex:focus {
   color: rgb(34, 34, 34) !important;
@@ -265,7 +247,6 @@ body {
 .footerLeft {
   border-left: 1px solid white;
 }
-
 .footerRight {
   border-right: 1px solid white;
 }
