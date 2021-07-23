@@ -39,6 +39,11 @@ body {
 .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ._._._._._._._._._._._._._._._._._.
 */
+
+.navegador {
+  box-shadow: 7px 0px 10px var(--color5);
+}
+
 .menuPag {
   border-left: 1px solid var(--colorLetra);
   font-size: 1.1rem;
@@ -61,6 +66,10 @@ body {
 .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ._._._._._._._._._._._._._._._._._.
 */
+
+.placaFondo {
+  box-shadow: 1px 0px 10px rgba(4, 34, 37, 0.308);
+}
 
 .carousel-caption {
   text-shadow: -1px -1px 4px rgba(0, 0, 0, 0.4), -1px 1px 4px rgba(0, 0, 0, 0.4),
@@ -121,7 +130,12 @@ body {
     transform: scale(1.01);
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 400px) {
+  .card {
+    width: 85% ;
+  }
+}
+@media (min-width: 501px) and (max-width: 991px) {
   .card {
     width: 60%;
   }
