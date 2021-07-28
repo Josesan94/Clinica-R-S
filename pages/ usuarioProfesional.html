@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clínica R&S</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="/assets/images/LogoPestañaBlanco.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._._._.
+
+                NAVBAR SECTION
+
+    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._. -->
+
+    <div id="INICIO" style="height: 80px"></div>
+
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-light navegador"
+      style="background-color: rgb(255, 255, 255)"
+    >
+      <div class="container-md">
+        <a class="navbar-brand p-0 m-0" href="/index.html"
+          ><img
+            src="/assets/images/LogoLargo.png"
+            alt="logo clinica R&S"
+            style="height: 80px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-lg-flex justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav d-flex">
+            <a
+              class="mx-3 menuPag letraContraste py-2 ps-4"
+              style="text-decoration: none; color: var(--colorLetra)"
+              aria-current="page"
+              href="/pages/error404.html"
+              >La Institución</a
+            >
+            <a
+              class="mx-3 menuPag letraContraste py-2 ps-4"
+              style="text-decoration: none; color: var(--colorLetra)"
+              aria-current="page"
+              href="#"
+              >Soy Paciente</a
+            >
+            <a
+              class="mx-3 menuPag letraContraste py-2 ps-4"
+              style="text-decoration: none; color: var(--colorLetra)"
+              aria-current="page"
+              href="/pages/usuarioProfesional.html"
+              >Soy Profesional</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._._._.
+
+              MAIN SECTION
+
+    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._. -->
+
+    <main>
+      <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+      ._._._._._._._._._._._._._._._._._._._.
+                PORTADA SECTION
+      .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+      ._._._._._._._._._._._._._._._._._. -->
+
+      <img
+        src="/assets/images/login:usuario Profesional/Profesional.png"
+        alt=""
+        class="w-100"
+      />
+
+      <div class="container">
+        <div class="row">
+          <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+          ._._._._._._._._._._._._._._._._._._._.
+           
+                  COL PRINCIPAL SECTION
+           
+          .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+          ._._._._._._._._._._._._._._._._._. -->
+
+          <div
+            class="
+              col
+              px-2
+              d-flex
+              flex-column
+              justify-content-center
+              align-items-center
+            "
+          >
+            <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+                      MIS TURNOS SECTION
+            ._._._._._._._._._._._._._._._._._. -->
+            <section
+              class="
+                row
+                m-3
+                py-3
+                d-flex
+                justify-content-center
+                align-items-center
+                placaFondo
+                col-sm-10
+              "
+              style="background: var(--color6)"
+            >
+              <div class="row"><h3 class="titulo">Mis turnos</h3></div>
+              <div class="row d-flex flex-column justify-content-center">
+                <div id="headerCalendar">
+                  <div id="monthDisplay"></div>
+                  <div>
+                    <button id="backButton" class="btn btn-outline-secondary">
+                      Anterior
+                    </button>
+                    <button id="nextButton" class="btn btn-outline-secondary">
+                      Siguiente
+                    </button>
+                  </div>
+                </div>
+
+                <div id="weekdays" class="d-flex justify-content-around">
+                  <div>Domingo</div>
+                  <div>Lunes</div>
+                  <div>Martes</div>
+                  <div>Miércoles</div>
+                  <div>Jueves</div>
+                  <div>Viernes</div>
+                  <div>Sábado</div>
+                </div>
+
+                <div id="calendar"></div>
+              </div>
+            </section>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._._._.
+
+              FOOTER SECTION
+
+    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+    ._._._._._._._._._._._._._._._._._. -->
+
+    <footer class="text-white" style="background-color: var(--colorLetra)">
+      <div class="container text-center py-3">
+        <nav class="row align-items-center">
+          <div class="col-md footerRight">
+            <div class="my-1" style="font-size: 1.1rem">Contacto</div>
+            <div style="font-size: 0.85rem">
+              <i class="fas fa-map-marker-alt"></i> 9 de Julio 279 – San Miguel
+              de Tucumán
+            </div>
+            <div class="my-1" style="font-size: 0.85rem">
+              <i class="fas fa-phone-alt"></i> +54 (381) 4502600
+            </div>
+            <div class="my-1" style="font-size: 1.1rem">
+              Nuestras redes sociales
+            </div>
+            <div>
+              <a
+                class="letraContraste"
+                href="https://www.facebook.com/"
+                style="
+                  text-decoration: none;
+                  color: rgb(255, 255, 255);
+                  font-size: 0.85rem;
+                "
+                target="_blank"
+                ><i class="fab fa-facebook"></i> Facebook</a
+              >
+            </div>
+            <div>
+              <a
+                class="letraContraste"
+                href="https://twitter.com/"
+                style="
+                  text-decoration: none;
+                  color: rgb(255, 255, 255);
+                  font-size: 0.85rem;
+                "
+                target="_blank"
+                ><i class="fab fa-twitter-square"></i> Twitter</a
+              >
+            </div>
+            <div>
+              <a
+                class="letraContraste"
+                href="https://www.instagram.com/"
+                style="
+                  text-decoration: none;
+                  color: rgb(255, 255, 255);
+                  font-size: 0.85rem;
+                "
+                target="_blank"
+                ><i class="fab fa-instagram"></i> Instagram</a
+              >
+            </div>
+          </div>
+          <div class="col-md d-none d-md-block">
+            <a href="/index.html"
+              ><img
+                src="/assets/images/LogoCuadrado.png"
+                alt="logo clinica R&S"
+                style="height: 200px"
+            /></a>
+          </div>
+          <div class="col-md d-none d-lg-block footerLeft">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1754617155902!2d-65.20787508491479!3d-26.834370996404566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0a1fc920d0d%3A0xca77ed30bc1ec683!2sCl%C3%ADnica%20Mayo%20de%20UMCB!5e0!3m2!1ses!2sar!4v1626814427052!5m2!1ses!2sar"
+              class="w-50"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+            <div style="font-size: 1.1rem">Nuestra ubicación</div>
+          </div>
+        </nav>
+      </div>
+    </footer>
+
+    <div id="newEventModal">
+      <h2>Nuevo turno</h2>
+
+      <input id="eventTitleInput" placeholder="Event Title" />
+
+      <button id="saveButton">Guardar</button>
+      <button id="cancelButton">Cancelar</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Turno asignado</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Cancelar turno</button>
+      <button id="closeButton">Cerrar</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/Js/script.js"></script>
+  </body>
+</html>

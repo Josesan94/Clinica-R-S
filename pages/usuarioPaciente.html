@@ -35,7 +35,7 @@
     .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
     ._._._._._._._._._._._._._._._._._. -->
 
-    <div id="INICIO" style="height: 96px"></div>
+    <div id="INICIO" style="height: 80px"></div>
 
     <nav
       class="navbar navbar-expand-lg fixed-top navbar-light navegador"
@@ -82,7 +82,7 @@
               class="mx-3 menuPag letraContraste py-2 ps-4"
               style="text-decoration: none; color: var(--colorLetra)"
               aria-current="page"
-              href="#"
+              href="/pages/usuarioProfesional.html"
               >Soy Profesional</a
             >
           </div>
@@ -101,93 +101,15 @@
     <main>
       <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
       ._._._._._._._._._._._._._._._._._._._.
-                CAROUSEL SECTION
+                PORTADA SECTION
       .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
       ._._._._._._._._._._._._._._._._._. -->
 
-      <div
-        id="carouselExampleCaptions"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="/assets/images/index/1.png"
-              class="d-block w-100"
-              alt="Fotografia de las instalaciones de la clinica"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="/assets/images/index/2.png"
-              class="d-block w-100"
-              alt="Fotografia ilustrativa de los medicos de la clinica"
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Consulta nuestra cartilla de médicos</h5>
-              <p>
-                Contamos con los profesionales de la salud más calificados de la
-                región.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="/assets/images/index/3.png"
-              class="d-block w-100"
-              alt="Fotografia ilustrativa del equipamiento de la clinica"
-            />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Visita nuestra cartilla de prestaciones</h5>
-              <p>
-                Nuestra tecnología de punta garantiza la mejor experiencia
-                clínica y presición diagnóstica.
-              </p>
-            </div>
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+      <img
+        src="/assets/images/login:usuario Paciente/Paciente.png"
+        alt=""
+        class="w-100"
+      />
 
       <div class="container">
         <div class="row">
@@ -209,16 +131,36 @@
               align-items-center
             "
           >
-            <div id="container">
-              <div id="header">
+            <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+                      MIS TURNOS SECTION
+            ._._._._._._._._._._._._._._._._._. -->
+            <section
+              class="
+                row
+                m-3
+                py-3
+                d-flex
+                justify-content-center
+                align-items-center
+                placaFondo
+              "
+              style="background: var(--color6)"
+            >
+              <div class="row"><h3 class="titulo">Mis turnos</h3></div>
+              <div class="row d-flex flex-column justify-content-center">
+                <div id="headerCalendar">
                   <div id="monthDisplay"></div>
                   <div>
-                      <button id="backButton">Back</button>
-                      <button id="nextButton">Next</button>
+                    <button id="backButton" class="btn btn-outline-secondary">
+                      Anterior
+                    </button>
+                    <button id="nextButton" class="btn btn-outline-secondary">
+                      Siguiente
+                    </button>
                   </div>
-              </div>
+                </div>
 
-              <div id="weekdays">
+                <div id="weekdays" class="d-flex justify-content-around">
                   <div>Domingo</div>
                   <div>Lunes</div>
                   <div>Martes</div>
@@ -226,22 +168,12 @@
                   <div>Jueves</div>
                   <div>Viernes</div>
                   <div>Sábado</div>
+                </div>
+
+                <div id="calendar"></div>
               </div>
-
-              <div id="calendar"></div>
-            </div>
-
-            <div id="newEventModal">
-                <h2>New Event</h2>
-
-                <input id="eventTitleInput" placeholder="Event Title">
-
-                <button id="saveButton">Save</button>
-                <button id="cancelButton">Cancel</button>
-            </div>
-
+            </section>
           </div>
-
           <br />
           <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
           ._._._._._._._._._._._._._._._._._._._.
@@ -252,7 +184,7 @@
           ._._._._._._._._._._._._._._._._._. -->
           <div
             class="col-sm-12 col-md-3 px-sm-5 px-md-2 px-lg-4 my-3 placaFondo"
-            style="background: var(--color6);"
+            style="background: var(--color6)"
           >
             <div
               class="
@@ -270,7 +202,9 @@
                   placeholder="Buscar en el sitio..."
                   aria-label="Search"
                 />
-                <a href="/pages/error404.html" class="btn btn-outline-secondary">Buscar</a>
+                <a href="/pages/error404.html" class="btn btn-outline-secondary"
+                  >Buscar</a
+                >
               </form>
 
               <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
@@ -388,6 +322,24 @@
       </div>
     </footer>
 
+    <div id="newEventModal">
+      <h2>Nuevo turno</h2>
+
+      <input id="eventTitleInput" placeholder="Event Title" />
+
+      <button id="saveButton">Guardar</button>
+      <button id="cancelButton">Cancelar</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Turno asignado</h2>
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Cancelar turno</button>
+      <button id="closeButton">Cerrar</button>
+    </div>
+
     <div id="modalBackDrop"></div>
 
     <script
@@ -395,6 +347,6 @@
       integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
       crossorigin="anonymous"
     ></script>
-    <script src="/Js/practice.js"></script>
+    <script src="/Js/script.js"></script>
   </body>
 </html>

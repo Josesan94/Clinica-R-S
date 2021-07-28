@@ -319,77 +319,63 @@ body {
 
 /*CALENDARIO*/
 
-/* body {
-  display: flex;
-  margin-top: 50px;
-  justify-content: center;
-  background-color: #FFFCFF;
-} */
-
-button {
-  width: 75px;
-  cursor: pointer;
-  box-shadow: 0px 0px 2px gray;
-  border: none;
-  outline: none;
-  padding: 5px;
-  border-radius: 5px;
-  color: white;
-}
-
-#header {
+#headerCalendar {
   padding: 10px;
-  color: #d36c6c;
-  font-size: 26px;
-  font-family: sans-serif;
+  color: var(--colorContraste);
+  font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-#header button {
-  background-color:#92a1d1;
-}
-#container {
-  width: 770px;
-}
+
 #weekdays {
-  width: 100%;
-  display: flex;
-  color: #247BA0;
+  font-size: 80%;
+  color: var(--colorLetra);
 }
 #weekdays div {
-  width: 100px;
-  padding: 10px;
+  padding: 1%;
 }
 #calendar {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
 }
+
+@media (max-width: 400px) {
+  /* #calendar {
+    width: 50% ;
+  } */
+  .day {
+    padding: 6%;
+    margin: 6%;
+    box-shadow: 0% 0% 5% rgb(161, 161, 161);
+    height: 50px;
+    font-size: 0.8rem;
+  }
+}
+
 .day {
-  width: 100px;
   padding: 10px;
   height: 100px;
   cursor: pointer;
   box-sizing: border-box;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   margin: 5px;
-  box-shadow: 0px 0px 3px #CBD4C2;
+  box-shadow: 0px 0px 3px rgb(161, 161, 161);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .day:hover {
-  background-color: #e8faed;
+  background-color: var(--color1);
 }
 
 .day + #currentDay {
-  background-color:#e8f4fa;
+  background-color: var(--color4);
 }
 .event {
   font-size: 10px;
   padding: 3px;
-  background-color: #58bae4;
+  background-color: var(--color5);
   color: white;
   border-radius: 5px;
   max-height: 55px;
@@ -397,7 +383,7 @@ button {
 }
 .padding {
   cursor: default !important;
-  background-color: #FFFCFF !important;
+  background-color: rgb(238, 238, 238) !important;
   box-shadow: none !important;
 }
 #newEventModal, #deleteEventModal {
