@@ -92,10 +92,13 @@ main {
 }
 
 .titulo {
-  color: var(--colorLetra);
-  font-size: 3rem;
-  padding: 2rem;
+  
+  margin: 2rem;
   border-bottom: 1px solid var(--colorLetra);
+}
+.titulo > h3 {
+  color: var(--colorLetra);
+  font-size: 2.5rem;
 }
 
 /* LAS TERJETAS DE LA SECCION "SERVICIOS" (Y TODO LOS COMPONENTES QUE TIENEN DENTRO) ESTAN NOMBRADAS CON LA CLASE "card", MIENTRAS QUE LAS TARJETAS DE LA SECCION "NOVEDADES" ESTAN REFERENCIADAS CON LA CLASE "cardIndex"*/
@@ -266,7 +269,7 @@ main {
 ._._._._._._._._._._._._._._._._._.
 */
 
-.busquedaIndex:focus {
+input:focus {
   color: rgb(34, 34, 34) !important;
   background-color: #fff !important;
   border-color: var(--color2) !important;
