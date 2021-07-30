@@ -501,11 +501,11 @@ main {
 */
 
 .imagenAsideProfesional {
-  background: url(/assets/images/login:usuario\ Profesional/login.png) no-repeat center;
+  background: url(/assets/images/loginUsuarioProfesional/login.png) no-repeat center;
   background-size: cover;
 }
 
 .imagenAsidePaciente {
-  background: url(/assets/images/login:usuario\ Paciente/login.png) no-repeat center;
+  background: url(/assets/images/loginUsuarioPaciente/login.png) no-repeat center;
   background-size: cover;
 }
