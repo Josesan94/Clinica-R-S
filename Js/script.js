@@ -1,4 +1,12 @@
-//Calendario
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+
+            CALENDARIO
+
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+*/
 
 //Variable nav para saber en que mes estoy, 0 es el mes actual
 let nav = 0;
@@ -62,7 +70,7 @@ function load() {
 
   console.log(`dateString: ${dateString}`);
 
-  const paddingDays = weekdays.indexOf(dateString.split(", ")[0]); //esto lo saca de hacer un console log de "dateString" y ver que justo antes del ", " dice el dia (pero no entiendo como saca un numero de esto, osea saca la cantidad de dias de la semana que pertenecen al mes anterior usando el string "weekdays" que defini arriba) ??????????
+  const paddingDays = weekdays.indexOf(dateString.split(", ")[0]); //esto lo saca de hacer un console log de "dateString" y ver que justo antes del ", " dice el dia, entonces busca en el vector weekdays cual el el index del elemento que coincide (lo unico que no entiendo es el [0]) ??????????
 
   document.getElementById("monthDisplay").innerText = `${dt.toLocaleDateString(
     "es-ES",
@@ -154,11 +162,15 @@ function initButtons() {
 initButtons();
 load();
 
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
 
+            CALENDARIO
 
-//Sistema de turnos
-
-
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+*/
 
 function Patient (name, mail, password, phone, gender, date, socSec) {
     this.name = name;
@@ -190,3 +202,55 @@ function Appointment (name1, name2, time, day, month, year, symptoms) {
     this.symptoms = symptoms; //texto pedido en los requisitos.
 }
 
+let professional1 = new Professional("Juan Gómez","juangomez@gmail.com","1234","3814568278","345678","Clínica");
+let professional2 = new Professional("Lucía Juárez","juarezlucia@gmail.com","1234","3814489827","825305","Clínica");
+let professional3 = new Professional("Sofía Fernández","sfernandez@gmail.com","1234","3815678278","338726","Gastroenterología");
+let professional4 = new Professional("Martín Juárez","juarezmartin@gmail.com","1234","3814581099","836472","Gastroenterología");
+let professional5 = new Professional("Martina Díaz","ginecologadiaz@gmail.com","1234","3815711092","332458","Ginecología");
+let professional6 = new Professional("María Faoto","faotomaria@gmail.com","1234","3814489827","825305","Ginecología");
+let professional7 = new Professional("Gabriel Gutiérrez","ggutierrez@gmail.com","1234","3815678278","368678","Odontología");
+let professional8 = new Professional("Luisa Guerra","luisamedica@gmail.com","1234","3814489623","675305","Odontología");
+let professional9 = new Professional("Emilia Luna","lunaemilia@gmail.com","1234","3814689278","356078","Otorrinolaringología");
+let professional10 = new Professional("Andrea Pérez","perezandrea@gmail.com","1234","3816789827","825532","Otorrinolaringología");
+let professional11 = new Professional("Pablo Espeche","pespeche@gmail.com","1234","3816568290","343378","Pediatría");
+let professional12 = new Professional("Amanda Mercado","amandamercado@gmail.com","1234","3816788777","725605","Pediatría");
+
+localStorage.setItem("1", JSON.stringify(professional1));
+localStorage.setItem("2", JSON.stringify(professional2));
+localStorage.setItem("3", JSON.stringify(professional3));
+localStorage.setItem("4", JSON.stringify(professional4));
+localStorage.setItem("5", JSON.stringify(professional5));
+localStorage.setItem("6", JSON.stringify(professional6));
+localStorage.setItem("7", JSON.stringify(professional7));
+localStorage.setItem("8", JSON.stringify(professional8));
+localStorage.setItem("9", JSON.stringify(professional9));
+localStorage.setItem("10", JSON.stringify(professional10));
+localStorage.setItem("11", JSON.stringify(professional11));
+localStorage.setItem("12", JSON.stringify(professional12));
+
+
+let specialty = getElementById('specialty');
+
+let professional = getElementById('professional');
+
+
+function loadSprecialtys() {
+  
+}
+
+function loadProfessionals() {
+
+  for(i=0 ; ; i++) {
+    
+    let sprecialtyName = JSON.parse(localStorage.getItem(`${i}`)).sprecialty
+
+    if (specialtyName == specialty.innerText) {
+      const optionProfessional = document.createElement("option");
+      optionProfessional.innerText = JSON.parse(localStorage.getItem(`${i}`)).name;
+  
+      professional.appendChild(optionProfessional);
+    }
+  
+  }
+
+}

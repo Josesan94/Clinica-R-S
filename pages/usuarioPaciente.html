@@ -132,13 +132,13 @@
             "
           >
             <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-                      MIS TURNOS SECTION
+                    MY APPOINTMENTS SECTION
             ._._._._._._._._._._._._._._._._._. -->
             <section
               class="
                 row
                 m-3
-                py-3
+                p-3
                 d-flex
                 justify-content-center
                 align-items-center
@@ -146,7 +146,7 @@
               "
               style="background: var(--color6)"
             >
-              <div class="row"><h3 class="titulo">Mis turnos</h3></div>
+              <div class="row titulo"><h3>Mis turnos</h3></div>
               <div class="row d-flex flex-column justify-content-center">
                 <div id="headerCalendar">
                   <div id="monthDisplay"></div>
@@ -171,6 +171,76 @@
                 </div>
 
                 <div id="calendar"></div>
+              </div>
+            </section>
+            <section
+              class="
+                row
+                m-3
+                p-3
+                d-flex
+                justify-content-center
+                align-items-center
+                placaFondo
+              "
+              style="background: var(--color6)"
+            >
+              <div class="row titulo"><h3>Sacar nuevo turno</h3></div>
+              <div
+                class="row"
+              >
+                <form class="row g-3 d-flex flex-column" id="myForm">
+                  <div class="col-xl-6 col-12 d-flex flex-column justify-content-center">
+                    <label for="inputState" class="form-label">Seleccione una especialidad</label>
+                    <select id="specialty" class="form-select" name="specialty">
+                      <option value="Clínica">Clínica</option>
+                      <option value="Gastroenterología">Gastroenterología</option>
+                      <option value="Ginecología">Ginecología</option>
+                      <option value="Odontología">Odontología</option>
+                      <option value="Otorrinolaringología">Otorrinolaringología</option>
+                      <option value="Pediatría">Pediatría</option>
+                    </select>
+                  </div>
+                  <div class="col-xl-6 col-12">
+                    <label for="inputState" class="form-label">Seleccione un profesional</label>
+                    <select id="professional" class="form-select" name="professional">
+                      <option value="clínica">Clínica</option>
+                      <option value="Gastroenterología">Gastroenteroloía</option>
+                    </select>
+                  </div>
+                  <div class="col-xl-6 col-12">
+                    <label for="inputDate" class="form-label"
+                      >Seleccione un día</label
+                    >
+                    <input
+                      type="date"
+                      name="appointmentDate"
+                      id="appointmentDate"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-xl-6 col-12">
+                    <label for="inputState" class="form-label">Seleccione un horario</label>
+                    <select id="professional" class="form-select" name="professional">
+                      <option value="clinica">Clínica</option>
+                      <option value="gastroenterologia">Gastroenteroloía</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="inputEmail" class="form-label">Detalle síntomas o motivo de la consulta</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="symptoms"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-outline-secondary">
+                      Enviar
+                    </button>
+                  </div>
+                </form>
               </div>
             </section>
           </div>
