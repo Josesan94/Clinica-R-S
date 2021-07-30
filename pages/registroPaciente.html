@@ -98,10 +98,7 @@
     .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
     ._._._._._._._._._._._._._._._._._. -->
 
-    <main class="d-flex
-    flex-column
-    align-items-center
-    justify-content-center">
+    <main class="d-flex flex-column align-items-center justify-content-center">
       <div class="container">
         <div class="row">
           <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
@@ -141,7 +138,7 @@
               <div
                 class="row d-flex justify-content-center align-content-center"
               >
-                <form class="row g-3">
+                <form class="row g-3" id="myForm">
                   <div class="col-md-12">
                     <label for="inputName" class="form-label"
                       >Nombre y Apellido</label
@@ -150,8 +147,29 @@
                       type="text"
                       class="form-control"
                       id="name"
-                      placeholder="Laura Berarducci"
+                      placeholder="José Santillán"
+                      required
                     />
+                  </div>
+                  <div class="col-xl-6 col-12">
+                    <label for="inputDate" class="form-label"
+                      >Fecha de Nacimiento</label
+                    >
+                    <input
+                      type="date"
+                      name="date"
+                      id="date"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-xl-6 col-12">
+                    <label for="inputState" class="form-label">Sexo</label>
+                    <select id="gender" class="form-select" name="gender">
+                      <option selected>Mujer</option>
+                      <option value="male">Hombre</option>
+                      <option value="female">Prefiero no especificar</option>
+                    </select>
                   </div>
                   <div class="col-md-12">
                     <label for="inputEmail" class="form-label">Email</label>
@@ -159,6 +177,7 @@
                       type="email"
                       class="form-control"
                       id="email"
+                      required
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                     />
                   </div>
@@ -166,7 +185,12 @@
                     <label for="inputPassword" class="form-label"
                       >Contraseña</label
                     >
-                    <input type="password" class="form-control" id="password" />
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      required
+                    />
                   </div>
                   <div class="col-md-6">
                     <label for="repeatPassword" class="form-label"
@@ -176,37 +200,35 @@
                       type="password"
                       class="form-control"
                       id="repeatPassword"
+                      required
+                    />
+                  </div>
+                  <div class="col-xl-6 col-12">
+                    <label for="inputCity" class="form-label">Dirección</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="address"
+                      required
                     />
                   </div>
                   <div class="col-xl-6 col-12">
                     <label for="inputTel" class="form-label">Teléfono</label>
                     <input
                       type="tel"
-                      name="phone"
+                      name="telefono"
                       id="phone"
                       class="form-control"
+                      required
                     />
                   </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="matricula" class="form-label"
-                      >Matricula Profesional</label
-                    >
-                    <input
-                      type="number"
-                      name="regist"
-                      id="regist"
-                      class="form-control"
-                    />
-                  </div>
-                  <div class="col-12">
-                    <label for="specialty" class="form-label"
-                      >Especialdad Médica</label
-                    >
+                  <div class="col-md-12">
+                    <label for="socSec" class="form-label">Obra Social</label>
                     <input
                       type="text"
-                      name="specialty"
-                      id="specialty"
                       class="form-control"
+                      id="socSec"
+                      required
                     />
                   </div>
                   <div class="col-12">
@@ -232,7 +254,7 @@
               col-lg-7
               px-md-2 px-lg-4
               my-3
-              imagenAsideProfesional
+              imagenAsidePaciente
               placaFondo
             "
           ></div>

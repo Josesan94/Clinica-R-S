@@ -160,14 +160,14 @@ load();
 
 
 
-function Patient (name, mail, password, phone, gender, birth, socSec) {
+function Patient (name, mail, password, phone, gender, date, socSec) {
     this.name = name;
     this.mail = mail;
     this.password = password;
     this.phone = phone;
-    this.address = addressñ
+    this.address = address;
     this.gender = gender;
-    this.birth = birth; //fecha de nacimiento
+    this.date = date; //fecha de nacimiento
     this.socSec = socSec;
 }
 

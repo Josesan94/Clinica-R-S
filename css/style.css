@@ -30,6 +30,10 @@ body {
   background: var(--gradiente);
 }
 
+main {
+  min-height: calc(100vh - 328px);
+}
+
 /*
 .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ._._._._._._._._._._._._._._._._._.
@@ -61,12 +65,17 @@ body {
 .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ._._._._._._._._._._._._._._._._._.
 
-              MAIN
+              INDEX
 
 .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ._._._._._._._._._._._._._._._._._.
 */
 
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+              Main
+._._._._._._._._._._._._._._._._._.
+*/
 .placaFondo {
   box-shadow: 1px 0px 10px rgba(4, 34, 37, 0.308);
 }
@@ -293,16 +302,10 @@ body {
 */
 
 .body404 {
-  background: #CCFDFF url(/assets/images/404/Error404.png) no-repeat fixed center;
+  background: #CCFDFF url(/assets/images/404/Error404.png) no-repeat fixed center/100%;
   display: flex;
   justify-content: center;
   align-content: center;
-}
-
-@media (max-width: 1100px) {
-  .body404 {
-    background: #CCFDFF url(/assets/images/404/Error404.png) no-repeat fixed center/130%;
-  }
 }
 
 .boton404 {
@@ -317,8 +320,57 @@ body {
   }
 }
 
-/*CALENDARIO*/
+@media (max-width: 350px) {
+  .boton404 {
+    margin-top: 55vw;
+  }
+}
+@media (min-width: 351px) and (max-width: 600px) {
+  .boton404 {
+    margin-top: 30vw;
+  }
+}
+@media (min-width: 601px) and (max-width: 800px) {
+  .boton404 {
+    margin-top: 18vw;
+  }
+}
+@media (min-width: 801px) and (max-width: 1000px) {
+  .boton404 {
+    margin-top: 12vw;
+  }
+}
+@media (min-width: 1001px) and (max-width: 1150px) {
+  .boton404 {
+    margin-top: 8vw;
+  }
+}
+@media (min-width: 1150px) and (max-width: 1350px) {
+  .boton404 {
+    margin-top: 4vw;
+  }
+}
+@media (min-width: 1351px) {
+  .boton404 {
+    margin-top: 2vw;
+  }
+}
 
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+
+          PAGINA USUARIO
+
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+*/
+
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+            Calendario
+._._._._._._._._._._._._._._._._._.
+*/
 #headerCalendar {
   padding: 10px;
   color: var(--colorContraste);
@@ -430,4 +482,30 @@ body {
   height: 100vh;
   position: absolute;
   background-color: rgba(0,0,0,0.8);
+}
+
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+
+      PAGINAS REGISTRO/LOGIN
+
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+._._._._._._._._._._._._._._._._._.
+*/
+
+/*
+.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+            Imagen aside
+._._._._._._._._._._._._._._._._._.
+*/
+
+.imagenAsideProfesional {
+  background: url(/assets/images/login:usuario\ Profesional/login.png) no-repeat center;
+  background-size: cover;
+}
+
+.imagenAsidePaciente {
+  background: url(/assets/images/login:usuario\ Paciente/login.png) no-repeat center;
+  background-size: cover;
 }
