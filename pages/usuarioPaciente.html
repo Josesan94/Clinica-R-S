@@ -106,7 +106,7 @@
       ._._._._._._._._._._._._._._._._._. -->
 
       <img
-        src="/assets/images/login:usuario Paciente/Paciente.png"
+        src="/assets/images/loginUsuarioPaciente/Paciente.png"
         alt=""
         class="w-100"
       />
@@ -137,16 +137,18 @@
             <section
               class="
                 row
-                m-3
+                my-3
+                me-3
                 p-3
                 d-flex
                 justify-content-center
                 align-items-center
                 placaFondo
+                w-100
               "
               style="background: var(--color6)"
             >
-              <div class="row titulo"><h3>Mis turnos</h3></div>
+              <div class="row titulo"><h3>Turnos disponibles</h3></div>
               <div class="row d-flex flex-column justify-content-center">
                 <div id="headerCalendar">
                   <div id="monthDisplay"></div>
@@ -170,70 +172,92 @@
                   <div>Sábado</div>
                 </div>
 
-                <div id="calendar"></div>
+                <div id="calendar" class="pb-4"></div>
               </div>
             </section>
             <section
               class="
                 row
-                m-3
+                my-3
+                me-3
                 p-3
                 d-flex
                 justify-content-center
                 align-items-center
                 placaFondo
+                w-100
               "
               style="background: var(--color6)"
             >
-              <div class="row titulo"><h3>Sacar nuevo turno</h3></div>
+              <div class="row titulo"><h3>Mis Turnos</h3></div>
               <div
                 class="row"
               >
-                <form class="row g-3 d-flex flex-column" id="myForm">
+                <!-- <form class="row g-3 d-flex flex-column" id="myForm">
                   <div class="col-xl-6 col-12 d-flex flex-column justify-content-center">
-                    <label for="inputState" class="form-label">Seleccione una especialidad</label>
+                    <label for="specialty" class="form-label">Seleccione una especialidad</label>
                     <select id="specialty" class="form-select" name="specialty">
-                      <option value="Clínica">Clínica</option>
-                      <option value="Gastroenterología">Gastroenterología</option>
-                      <option value="Ginecología">Ginecología</option>
-                      <option value="Odontología">Odontología</option>
-                      <option value="Otorrinolaringología">Otorrinolaringología</option>
-                      <option value="Pediatría">Pediatría</option>
                     </select>
                   </div>
                   <div class="col-xl-6 col-12">
-                    <label for="inputState" class="form-label">Seleccione un profesional</label>
+                    <label for="professional" class="form-label">Seleccione un profesional</label>
                     <select id="professional" class="form-select" name="professional">
-                      <option value="clínica">Clínica</option>
-                      <option value="Gastroenterología">Gastroenteroloía</option>
                     </select>
-                  </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="inputDate" class="form-label"
-                      >Seleccione un día</label
-                    >
-                    <input
-                      type="date"
-                      name="appointmentDate"
-                      id="appointmentDate"
-                      class="form-control"
-                      required
-                    />
                   </div>
                   <div class="col-xl-6 col-12">
                     <label for="inputState" class="form-label">Seleccione un horario</label>
-                    <select id="professional" class="form-select" name="professional">
+                    <select id="hour" class="form-select" name="hour">
                       <option value="clinica">Clínica</option>
                       <option value="gastroenterologia">Gastroenteroloía</option>
                     </select>
                   </div>
                   <div class="col-md-12">
-                    <label for="inputEmail" class="form-label">Detalle síntomas o motivo de la consulta</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="symptoms"
-                    />
+                    <label for="input" class="form-label">Detalle síntomas o motivo de la consulta</label>
+                    <textarea rows="3"class="form-control"
+                    id="symptoms"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-outline-secondary">
+                      Enviar
+                    </button>
+                  </div>
+                </form> -->
+              </div>
+              <!-- Button trigger modal -->
+              <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button> -->
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                                      <form class="row g-3 d-flex flex-column" id="myForm">
+                  <div class="col-xl-6 col-12 d-flex flex-column justify-content-center">
+                    <label for="specialty" class="form-label">Seleccione una especialidad</label>
+                    <select id="specialty" class="form-select" name="specialty">
+                      <option for="" selected disabled></option>
+                    </select>
+                  </div>
+                  <div class="col-xl-6 col-12">
+                    <label for="professional" class="form-label">Seleccione un profesional</label>
+                    <select id="professional" class="form-select" name="professional">
+                    </select>
+                  </div>
+                  <div class="col-xl-6 col-12">
+                    <label for="inputState" class="form-label">Seleccione un horario</label>
+                    <select id="hour" class="form-select" name="hour">
+                      <option value="clinica">Clínica</option>
+                      <option value="gastroenterologia">Gastroenteroloía</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="input" class="form-label">Detalle síntomas o motivo de la consulta</label>
+                    <textarea rows="3"class="form-control"
+                    id="symptoms"></textarea>
                   </div>
                   <div class="col-12">
                     <button type="submit" class="btn btn-outline-secondary">
@@ -241,6 +265,13 @@
                     </button>
                   </div>
                 </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>

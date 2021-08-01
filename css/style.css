@@ -13,7 +13,7 @@
   --color2: rgb(138, 197, 199);
   --color4: rgba(131, 255, 131, 0.308);
   --color5: rgba(4, 34, 37, 0.8);
-  --color6: rgba(255, 255, 255, 0.7);
+  --color6: rgb(255, 255, 255);
   --colorLetra: rgb(4, 34, 37);
   --colorContraste: rgb(228, 43, 18);
   --gradiente: linear-gradient(
@@ -282,6 +282,11 @@ input:focus {
   outline: 0 !important;
   box-shadow: 0 0 0 0.1rem var(--color2) !important;
 }
+.form-control:focus {
+  border-color: var(--color2) !important;
+  outline: 0 !important;
+  box-shadow: 0 0 0 0.1rem var(--color2) !important;
+}
 /*
 .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 ._._._._._._._._._._._._._._._._._.
@@ -401,9 +406,6 @@ input:focus {
 }
 
 @media (max-width: 400px) {
-  /* #calendar {
-    width: 50% ;
-  } */
   .day {
     padding: 6%;
     margin: 6%;
@@ -416,22 +418,27 @@ input:focus {
 .day {
   padding: 10px;
   height: 100px;
-  cursor: pointer;
   box-sizing: border-box;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(243, 243, 243);
   margin: 5px;
   box-shadow: 0px 0px 3px rgb(161, 161, 161);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.day:hover {
-  background-color: var(--color1);
-}
 
 .day + #currentDay {
   background-color: var(--color4);
 }
+
+.possibleAp {
+  cursor: pointer;
+}
+
+.possibleAp:hover {
+  background-color: var(--color1);
+}
+
 .event {
   font-size: 10px;
   padding: 3px;
@@ -443,7 +450,7 @@ input:focus {
 }
 .padding {
   cursor: default !important;
-  background-color: rgb(238, 238, 238) !important;
+  background-color: rgb(228, 228, 228) !important;
   box-shadow: none !important;
 }
 #newEventModal, #deleteEventModal {
