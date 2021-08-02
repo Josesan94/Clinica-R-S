@@ -78,7 +78,7 @@ function load() {
         daySquare.setAttribute("data-bs-toggle", "modal");
         daySquare.setAttribute("data-bs-target", "#exampleModal");
         daySquare.classList.add("possibleAp");
-        daySquare.id = `${i - paddingDays}/${month}/${year}`;
+        daySquare.id = `${i - paddingDays}/${month +1}/${year}`;
       }
     } else {
       daySquare.classList.add("padding"); //si i no es mayor que padding se le agrega esta clase para hacer los cuadrados grises
@@ -262,25 +262,32 @@ function allAppointments() {
   const month = new Date().getMonth();
   const year = new Date().getFullYear(); //obtengo la fecha de hoy
   let posibles = [];
-
+  console.log(day);
   let diasPosibles =
     new Date(year, month + 1, 0).getDate() - new Date().getDate(); //obtengo la cantidad de dias que quedan disponibles con turnos
-
-  for (i = 0; i <= diasPosibles; i++) {
-    for (let j = 0; j < 4; j++) {
-      diaTurno = new Date(year, month, day + i, 9 + j).toLocaleDateString(
-        "es-ES",
-        {
-          year: "numeric",
-          month: "numeric",
-          day: "numeric",
-          hour: "numeric",
-        }
-      );
-      posibles.push(diaTurno);
-    }
+  console.log(diasPosibles);
+  for (i = day; i <= diasPosibles + day; i++) {
+    // for (let j = 0; j < 4; j++) {
+      // diaTurno = new Date(year, month, day + i).toLocaleDateString(
+      //   "es-ES",
+      //   {
+      //     // year: "numeric",
+      //     // month: "numeric",
+      //     day: "numeric",
+      //     // hour: "numeric",
+      //   }
+      //   );
+      console.log('Holas');
+        // diaTurno = diaTurno.replace('/', '');
+      // posibles.push(diaTurno);
+      let obj = {};
+      obj[i] = [9,10,11,12]
+      posibles.push(obj);
+      // console.log(typeof posibles[diaTurno]);
+    // }
   }
-  console.log(`posibles: ${posibles}`)
+  console.log('posibles', posibles)
+  console.log(JSON.stringify(posibles))
   localStorage.setItem("turnos", JSON.stringify(posibles));
 }
 
@@ -322,26 +329,33 @@ let hourAp = document.getElementById("hourAp");
 document.querySelectorAll(".possibleAp").forEach((el) => {
   el.addEventListener("click", (e) => {
     let fecha = e.target.getAttribute("id");
+    fecha = fecha.split("/")[0];
+    console.log(fecha)
     console.log("Se ha clickeado el dia: " + fecha);
     let turnos = JSON.parse(localStorage.getItem("turnos"));
-    let turnosDelDia = turnos.filter(
-      (DateConstructor) =>
-        DateConstructor.toLocaleDateString("es-ES", {
-          year: "numeric",
-          month: "numeric",
-          day: "numeric",
-        }) == fecha
-    );
-    console.log(turnosDelDia);
-    hourAp.forEach((app) => {
-      hourApElement.innerHTML += `<option value="${app.hour}">${app.hour}</option>`;
+    console.log(turnos)
+    let turnosDelDia = turnos.find(date => {
+      if(date[fecha]) return true;
+    });
+      // (DateConstructor) =>
+      //   DateConstructor.toLocaleDateString("es-ES", {
+      //     year: "numeric",
+      //     month: "numeric",
+      //     day: "numeric",
+      //   }) == fecha
+    // );
+
+    //Posible aplicación
+    // Object.values(turnosDelDia)[0]
+    turnosDelDia[fecha].forEach((hour) => {
+      console.log(hour);
+      hourAp.innerHTML += `<option value="${hour}">${hour}</option>`;
     });
   });
 });
 
 // function saveAppointment {
 // //crear objeto turno y eliminar ese turno del array turnos
-
 // }
 
 // function appointmentCards {
