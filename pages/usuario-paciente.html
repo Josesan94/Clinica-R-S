@@ -228,6 +228,7 @@
                             id="specialty"
                             class="form-select"
                             name="specialty"
+                            required
                           >
                             <option for="" selected disabled></option>
                           </select>
@@ -239,27 +240,30 @@
                           <select
                             id="professional"
                             class="form-select"
-                            name="professional"
+                            name="professional" required
                           ></select>
                         </div>
                         <div class="col-xl-6 col-12">
-                          <label for="inputState" class="form-label"
+                          <label for="hourAr" class="form-label"
                             >Seleccione un horario</label
                           >
                           <select
                             id="hourAp"
                             class="form-select"
                             name="hourAp"
+                            required
                           ></select>
                         </div>
                         <div class="col-md-12">
-                          <label for="input" class="form-label"
+                          <label for="symptoms" class="form-label"
                             >Detalle síntomas o motivo de la consulta</label
                           >
                           <textarea
                             rows="3"
                             class="form-control"
                             id="symptoms"
+                            name="symptoms"
+                            required
                           ></textarea>
                         </div>
                       </form>
@@ -272,7 +276,7 @@
                       >
                         Cerrar
                       </button>
-                      <button type="submit" class="btn btn-danger">
+                      <button type="submit" onclick="saveAppointment ()" class="btn btn-danger">
                         Guardar turno
                       </button>
                     </div>
