@@ -75,14 +75,14 @@
               class="mx-3 menuPag letraContraste py-2 ps-4"
               style="text-decoration: none; color: var(--colorLetra)"
               aria-current="page"
-              href="#"
+              href="/pages/login-paciente.html"
               >Soy Paciente</a
             >
             <a
               class="mx-3 menuPag letraContraste py-2 ps-4"
               style="text-decoration: none; color: var(--colorLetra)"
               aria-current="page"
-              href="/pages/usuarioProfesional.html"
+              href="/pages/login-profesional.html"
               >Soy Profesional</a
             >
           </div>
@@ -112,7 +112,7 @@
       />
 
       <div class="container">
-        <div class="row">
+        <div class="row m-2">
           <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
           ._._._._._._._._._._._._._._._._._._._.
            
@@ -123,23 +123,19 @@
 
           <div
             class="
-              col-sm-12 col-md-9
               px-2
               d-flex
               flex-column
-              justify-content-center
-              align-items-center
             "
           >
             <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-                    MY APPOINTMENTS SECTION
+                    NEW APPOINTMENTS SECTION
             ._._._._._._._._._._._._._._._._._. -->
             <section
               class="
                 row
-                my-3
-                me-3
-                p-3
+                m-2
+                p-2
                 d-flex
                 justify-content-center
                 align-items-center
@@ -148,7 +144,8 @@
               "
               style="background: var(--color6)"
             >
-              <div class="row titulo"><h3>Turnos disponibles</h3></div>
+              <div class="row titulo"><h3>Calendario</h3></div>
+
               <div class="row d-flex flex-column justify-content-center">
                 <div id="headerCalendar">
                   <div id="monthDisplay"></div>
@@ -178,9 +175,8 @@
             <section
               class="
                 row
-                my-3
-                me-3
-                p-3
+                m-2
+                p-2
                 d-flex
                 justify-content-center
                 align-items-center
@@ -189,150 +185,98 @@
               "
               style="background: var(--color6)"
             >
-              <div class="row titulo"><h3>Mis Turnos</h3></div>
-              <div
-                class="row"
-              >
-                <!-- <form class="row g-3 d-flex flex-column" id="myForm">
-                  <div class="col-xl-6 col-12 d-flex flex-column justify-content-center">
-                    <label for="specialty" class="form-label">Seleccione una especialidad</label>
-                    <select id="specialty" class="form-select" name="specialty">
-                    </select>
-                  </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="professional" class="form-label">Seleccione un profesional</label>
-                    <select id="professional" class="form-select" name="professional">
-                    </select>
-                  </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="inputState" class="form-label">Seleccione un horario</label>
-                    <select id="hour" class="form-select" name="hour">
-                      <option value="clinica">Clínica</option>
-                      <option value="gastroenterologia">Gastroenteroloía</option>
-                    </select>
-                  </div>
-                  <div class="col-md-12">
-                    <label for="input" class="form-label">Detalle síntomas o motivo de la consulta</label>
-                    <textarea rows="3"class="form-control"
-                    id="symptoms"></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-outline-secondary">
-                      Enviar
-                    </button>
-                  </div>
-                </form> -->
-              </div>
-              <!-- Button trigger modal -->
-              <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button> -->
+              <div class="row titulo" id="hola soy id"><h3>Turnos Otorgados</h3></div>
 
               <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Nuevo turno
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
                     </div>
                     <div class="modal-body">
-                                      <form class="row g-3 d-flex flex-column" id="myForm">
-                  <div class="col-xl-6 col-12 d-flex flex-column justify-content-center">
-                    <label for="specialty" class="form-label">Seleccione una especialidad</label>
-                    <select id="specialty" class="form-select" name="specialty">
-                      <option for="" selected disabled></option>
-                    </select>
-                  </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="professional" class="form-label">Seleccione un profesional</label>
-                    <select id="professional" class="form-select" name="professional">
-                    </select>
-                  </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="inputState" class="form-label">Seleccione un horario</label>
-                    <select id="hour" class="form-select" name="hour">
-                      <option value="clinica">Clínica</option>
-                      <option value="gastroenterologia">Gastroenteroloía</option>
-                    </select>
-                  </div>
-                  <div class="col-md-12">
-                    <label for="input" class="form-label">Detalle síntomas o motivo de la consulta</label>
-                    <textarea rows="3"class="form-control"
-                    id="symptoms"></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-outline-secondary">
-                      Enviar
-                    </button>
-                  </div>
-                </form>
+                      <form class="row g-3 d-flex flex-column" id="myForm">
+                        <div
+                          class="
+                            col-xl-6 col-12
+                            d-flex
+                            flex-column
+                            justify-content-center
+                          "
+                        >
+                          <label for="specialty" class="form-label"
+                            >Seleccione una especialidad</label
+                          >
+                          <select
+                            id="specialty"
+                            class="form-select"
+                            name="specialty"
+                          >
+                            <option for="" selected disabled></option>
+                          </select>
+                        </div>
+                        <div class="col-xl-6 col-12">
+                          <label for="professional" class="form-label"
+                            >Seleccione un profesional</label
+                          >
+                          <select
+                            id="professional"
+                            class="form-select"
+                            name="professional"
+                          ></select>
+                        </div>
+                        <div class="col-xl-6 col-12">
+                          <label for="inputState" class="form-label"
+                            >Seleccione un horario</label
+                          >
+                          <select
+                            id="hourAp"
+                            class="form-select"
+                            name="hourAp"
+                          ></select>
+                        </div>
+                        <div class="col-md-12">
+                          <label for="input" class="form-label"
+                            >Detalle síntomas o motivo de la consulta</label
+                          >
+                          <textarea
+                            rows="3"
+                            class="form-control"
+                            id="symptoms"
+                          ></textarea>
+                        </div>
+                      </form>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cerrar
+                      </button>
+                      <button type="submit" class="btn btn-danger">
+                        Guardar turno
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
-          </div>
-          <br />
-          <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-          ._._._._._._._._._._._._._._._._._._._.
-           
-                  COLUMNA ASIDE SECTION
-           
-          .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-          ._._._._._._._._._._._._._._._._._. -->
-          <div
-            class="col-sm-12 col-md-3 px-sm-5 px-md-2 px-lg-4 my-3 placaFondo"
-            style="background: var(--color6)"
-          >
-            <div
-              class="
-                asideIndex
-                d-flex
-                flex-column
-                justify-content-center
-                align-items-center
-              "
-            >
-              <form class="d-flex my-5">
-                <input
-                  class="form-control me-2 busquedaIndex"
-                  type="search"
-                  placeholder="Buscar en el sitio..."
-                  aria-label="Search"
-                />
-                <a href="/pages/error404.html" class="btn btn-outline-secondary"
-                  >Buscar</a
-                >
-              </form>
-
-              <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-              ._._._._._._._._._._._._._._._._._._._.
-                        PUBLICIDAD SECTION
-              .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-              ._._._._._._._._._._._._._._._._._. -->
-
-              <a href="/pages/error404.html"
-                ><img
-                  src="/assets/images/index/Publicidad1.png"
-                  alt="Publicidad: Dona sangre, salva una vida"
-                  class="d-block w-100 mb-5"
-              /></a>
-              <a href="/pages/error404.html"
-                ><img
-                  src="/assets/images/index/Publicidad2.png"
-                  alt="Publicidad: Maraton anual por la inclusion"
-                  class="d-block w-100 mb-5"
-              /></a>
-              <a href="/pages/error404.html"
-                ><img
-                  src="/assets/images/index/Publicidad3.png"
-                  alt="Publicidad: Estamos contratando, dejanos tu CV"
-                  class="d-block w-100 mb-5"
-              /></a>
-            </div>
           </div>
         </div>
       </div>
@@ -422,26 +366,6 @@
         </nav>
       </div>
     </footer>
-
-    <div id="newEventModal">
-      <h2>Nuevo turno</h2>
-
-      <input id="eventTitleInput" placeholder="Event Title" />
-
-      <button id="saveButton">Guardar</button>
-      <button id="cancelButton">Cancelar</button>
-    </div>
-
-    <div id="deleteEventModal">
-      <h2>Turno asignado</h2>
-
-      <p id="eventText"></p>
-
-      <button id="deleteButton">Cancelar turno</button>
-      <button id="closeButton">Cerrar</button>
-    </div>
-
-    <div id="modalBackDrop"></div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
