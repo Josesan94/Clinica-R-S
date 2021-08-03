@@ -316,7 +316,7 @@ document.querySelectorAll(".possibleAp").forEach((el) => {
     fecha = e.target.getAttribute("id");
     console.log("Se ha clickeado el dia: " + fecha);
     hourAp.innerHTML = "";
-    let turnos = JSON.parse(localStorage.getItem("turnos"));
+    let turnos = JSON.parse(localStorage.getItem("turnos")) || [];
     let turnosDelDia = turnos.find(date => {
       if(date[fecha]) return true;
     });
