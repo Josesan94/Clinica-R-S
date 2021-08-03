@@ -77,11 +77,13 @@ function load() {
         daySquare.setAttribute("data-bs-target", "#exampleModal");
         daySquare.classList.add("possibleAp");
         daySquare.id = `${i - paddingDays}`;
-        let turnos = JSON.parse(localStorage.getItem("turnos"));
-        let turnosDelDia = turnos.find(date => {
-        if(date[i - paddingDays]) return true;
-        });
-        daySquare.innerHTML += `<div class="event text-center">${turnosDelDia[i - paddingDays].length} disp</div>`;
+        let turnos = JSON.parse(localStorage.getItem("turnos")) || [];
+        if (turnos.length > 0) {
+          let turnosDelDia = turnos.find(date => {
+            if (date[i - paddingDays]) return true;
+          });
+          daySquare.innerHTML += `<div class="event text-center">${turnosDelDia[i - paddingDays].length} disp</div>`;
+        }
       }
     } else {
       daySquare.classList.add("padding"); //si i no es mayor que padding se le agrega esta clase para hacer los cuadrados grises
@@ -271,9 +273,9 @@ function allAppointments() {
   let diasPosibles =
     new Date(year, month + 1, 0).getDate() - new Date().getDate(); //obtengo la cantidad de dias que quedan disponibles con turnos
   for (i = day; i <= diasPosibles + day; i++) {
-      let obj = {};
-      obj[i] = [9, 10, 11, 12]
-      posibles.push(obj);
+    let obj = {};
+    obj[i] = [9, 10, 11, 12]
+    posibles.push(obj);
   }
   localStorage.setItem("turnos", JSON.stringify(posibles));
 }
@@ -318,7 +320,7 @@ document.querySelectorAll(".possibleAp").forEach((el) => {
     hourAp.innerHTML = "";
     let turnos = JSON.parse(localStorage.getItem("turnos")) || [];
     let turnosDelDia = turnos.find(date => {
-      if(date[fecha]) return true;
+      if (date[fecha]) return true;
     });
     turnosDelDia[fecha].forEach((hour) => {
       hourAp.innerHTML += `<option value="${hour}">${hour}:00 hs</option>`;
@@ -332,50 +334,50 @@ document.querySelectorAll(".possibleAp").forEach((el) => {
   return fecha;
 });
 
-let appointmentsSaved = JSON.parse(localStorage.getItem("appointmentsSaved"))|| [];
+let appointmentsSaved = JSON.parse(localStorage.getItem("appointmentsSaved")) || [];
 
 function saveAppointment() {
-//generar el turno, guardarlo en un array y subirlo a local.Storage
-let symptoms = document.getElementById("symptoms");
-let currentUserPatient = JSON.parse(localStorage.getItem("currentUserPatient"));
-let appointment = new Appointment(`${specialtyProfessionalsElement.value}`, `${currentUserPatient.name}`,`${hourAp.value}`, `${fecha}`, `${symptoms.value}`);
-appointmentsSaved.push(appointment);
-localStorage.setItem("appointmentsSaved", JSON.stringify(appointmentsSaved));
-misTurnos.innerHTML += `<div class="card appCard"><div class="card-title">${appointment.date} de ${new Date().toLocaleDateString(
+  //generar el turno, guardarlo en un array y subirlo a local.Storage
+  let symptoms = document.getElementById("symptoms");
+  let currentUserPatient = JSON.parse(localStorage.getItem("currentUserPatient"));
+  let appointment = new Appointment(`${specialtyProfessionalsElement.value}`, `${currentUserPatient.name}`, `${hourAp.value}`, `${fecha}`, `${symptoms.value}`);
+  appointmentsSaved.push(appointment);
+  localStorage.setItem("appointmentsSaved", JSON.stringify(appointmentsSaved));
+  misTurnos.innerHTML += `<div class="card appCard"><div class="card-title">${appointment.date} de ${new Date().toLocaleDateString(
   "es-ES",
   { month: "long" }
 )}</div><div class="card-content">Dr/Dra: ${appointment.doctor}</div><div class="card-content">Horario: ${appointment.time}:00 hs</div></div>`;
-appontmentsLeft();
-load();
+  appontmentsLeft();
+  load();
 }
 
 
 function createCards() {
-//crear las cards
-let currentUserPatient = JSON.parse(localStorage.getItem("currentUserPatient"));
-let saved = JSON.parse(localStorage.getItem("appointmentsSaved"));
-let appointmentsCards = saved.filter( (app) => app.patient == currentUserPatient.name);
-appointmentsCards.forEach((appointment) => {
-  misTurnos.innerHTML += `<div class="card appCard"><div class="card-title">${appointment.date} de ${new Date().toLocaleDateString(
+  //crear las cards
+  let currentUserPatient = JSON.parse(localStorage.getItem("currentUserPatient")) || [];
+  let saved = JSON.parse(localStorage.getItem("appointmentsSaved")) || [];
+  let appointmentsCards = saved.filter((app) => app.patient == currentUserPatient.name);
+  appointmentsCards.forEach((appointment) => {
+    misTurnos.innerHTML += `<div class="card appCard"><div class="card-title">${appointment.date} de ${new Date().toLocaleDateString(
     "es-ES",
     { month: "long" }
   )}</div><div class="card-content">Dr/Dra: ${appointment.doctor}</div><div class="card-content">Horario: ${appointment.time}:00 hs</div></div>`;
 
-})
+  })
 }
 
 function appontmentsLeft() {
   let turnosTotales = JSON.parse(localStorage.getItem("turnos"));
   turnosTotales.forEach((turnoTotales) => {
     appointmentsSaved.forEach((turnoGuardado) => {
-      if(Object.keys(turnoTotales) == turnoGuardado.date) {
+      if (Object.keys(turnoTotales) == turnoGuardado.date) {
         let dia = turnoGuardado.date;
         let hora = +turnoGuardado.time;
-        turnoTotales[dia] = turnoTotales[dia].filter((i) => i !== hora );
+        turnoTotales[dia] = turnoTotales[dia].filter((i) => i !== hora);
       }
     })
-})
-localStorage.setItem("turnos", JSON.stringify(turnosTotales));
+  })
+  localStorage.setItem("turnos", JSON.stringify(turnosTotales));
 }
 allAppointments();
 appontmentsLeft();
