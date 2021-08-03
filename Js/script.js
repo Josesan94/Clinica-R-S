@@ -19,8 +19,6 @@ const weekdays = [
   "sábado",
 ];
 
-
-
 function initButtons() {
   document.getElementById("nextButton").addEventListener("click", () => {
     nav++;
@@ -88,7 +86,6 @@ function load() {
   }
 }
 
-
 allAppointments();
 initButtons();
 load();
@@ -103,7 +100,7 @@ load();
 ._._._._._._._._._._._._._._._._._.
 */
 
-function Patient(name, mail, password, phone, gender, date, socSec) {
+function Patient(name, mail, password, phone, address, gender, date, socSec) {
   this.name = name;
   this.mail = mail;
   this.password = password;
@@ -123,17 +120,18 @@ function Professional(name, mail, password, phone, regist, specialty) {
   this.specialty = specialty; //especialidad
 }
 
-function Appointment(name1, name2, time, day, month, year, symptoms) {
+function Appointment(name1, name2, time, date, symptoms) {
   this.doctor = name1;
-  this.pacient = name2;
+  this.patient = name2;
   this.time = time;
-  this.day = day;
-  this.month = month;
-  this.year = year;
+  this.date = date;
   this.symptoms = symptoms; //texto pedido en los requisitos.
 }
 
+let currentUser = {};
+new Patient("Laura B", "lauryberarducci@gmail.com", "1234", "3814555555", "Tucuman", "femenino", "28/11/93", "obra social")
 
+localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
 let professionals = [];
 professionals.push(
@@ -256,44 +254,25 @@ professionals.push(
     "Pediatría"
   )
 );
+localStorage.setItem("professionals", JSON.stringify(professionals));
 
 function allAppointments() {
+  //generar el vector con todos los turnos del mes
   const day = new Date().getDate();
   const month = new Date().getMonth();
   const year = new Date().getFullYear(); //obtengo la fecha de hoy
   let posibles = [];
-  console.log(day);
   let diasPosibles =
     new Date(year, month + 1, 0).getDate() - new Date().getDate(); //obtengo la cantidad de dias que quedan disponibles con turnos
-  console.log(diasPosibles);
   for (i = day; i <= diasPosibles + day; i++) {
-    // for (let j = 0; j < 4; j++) {
-      // diaTurno = new Date(year, month, day + i).toLocaleDateString(
-      //   "es-ES",
-      //   {
-      //     // year: "numeric",
-      //     // month: "numeric",
-      //     day: "numeric",
-      //     // hour: "numeric",
-      //   }
-      //   );
-      console.log('Holas');
-        // diaTurno = diaTurno.replace('/', '');
-      // posibles.push(diaTurno);
       let obj = {};
       obj[i] = [9,10,11,12]
       posibles.push(obj);
-      // console.log(typeof posibles[diaTurno]);
-    // }
   }
   console.log('posibles', posibles)
   console.log(JSON.stringify(posibles))
   localStorage.setItem("turnos", JSON.stringify(posibles));
 }
-
-
-
-localStorage.setItem("professionals", JSON.stringify(professionals));
 
 professionals = JSON.parse(localStorage.getItem("professionals")) || [];
 let specialties = [];
@@ -326,37 +305,57 @@ specialtyElement.addEventListener("change", (e) => {
 
 //Escuchar el click en uno de los días e identificarlo para desplegar el select con los turnos del día especifico
 let hourAp = document.getElementById("hourAp");
+let fecha;
 document.querySelectorAll(".possibleAp").forEach((el) => {
   el.addEventListener("click", (e) => {
-    let fecha = e.target.getAttribute("id");
-    fecha = fecha.split("/")[0];
-    console.log(fecha)
+    fecha = e.target.getAttribute("id");
+    fechaDia = fecha.split("/")[0];
     console.log("Se ha clickeado el dia: " + fecha);
+    hourAp.innerHTML = "";
     let turnos = JSON.parse(localStorage.getItem("turnos"));
-    console.log(turnos)
+    console.log(`turnos: ${turnos}`);
     let turnosDelDia = turnos.find(date => {
-      if(date[fecha]) return true;
+      if(date[fechaDia]) return true;
     });
-      // (DateConstructor) =>
-      //   DateConstructor.toLocaleDateString("es-ES", {
-      //     year: "numeric",
-      //     month: "numeric",
-      //     day: "numeric",
-      //   }) == fecha
-    // );
-
-    //Posible aplicación
-    // Object.values(turnosDelDia)[0]
-    turnosDelDia[fecha].forEach((hour) => {
+    turnosDelDia[fechaDia].forEach((hour) => {
       console.log(hour);
-      hourAp.innerHTML += `<option value="${hour}">${hour}</option>`;
+      hourAp.innerHTML += `<option value="${hour}">${hour}:00 hs</option>`;
     });
+    return fecha;
   });
+  return fecha;
 });
 
-// function saveAppointment {
-// //crear objeto turno y eliminar ese turno del array turnos
-// }
+let appointmentsSaved = JSON.parse(localStorage.getItem("appointmentsSaved"))|| [];
+
+function saveAppointment() {
+//generar el turno, guardarlo en un array y subirlo a local.Storage
+let symptoms = document.getElementById("symptoms");
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+let appointment = new Appointment(`${specialtyProfessionalsElement.value}`, `${currentUser.mail}`,`${hourAp.value}`, `${fecha}`, `${symptoms.value}`);
+console.log(appointment);
+appointmentsSaved.push(appointment);
+localStorage.setItem("appointmentsSaved", JSON.stringify(appointmentsSaved));
+
+//crear las cards
+let saved = JSON.parse(localStorage.getItem("appointmentsSaved"));
+let appointmentsCards = saved.filter( (app) => app.patient == currentUser.mail);
+console.log(appointmentsCards);
+appointmentsCards.forEach((appointment) => {
+  misTurnos.innerHTML += `<div class="card appCard"></div>`;
+  let appCard = document.getElementsByClassName('appCard');
+  // appCard.innerHTML += `<div class="card-title">${appointment.fecha}</div><div class="card-content">${}</div><div class="card-content">Horario:${hourAp.value}:00 hs</div>`
+})
+
+
+}
+
+// let specialtyProfessionals = professionals.filter(
+//   (professional) => professional.specialty == specialityToSearch
+// );
+// specialtyProfessionals.forEach((pro) => {
+//   specialtyProfessionalsElement.innerHTML += `<option value="${pro.regist}">${pro.name}</option>`;
+// });
 
 // function appointmentCards {
 //  // crear las cards tanto para el medico como para el paciente con los turnos correspondientes
