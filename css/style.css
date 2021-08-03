@@ -486,3 +486,10 @@ input:focus {
   background: url(/assets/images/loginUsuarioPaciente/login.png) no-repeat center;
   background-size: cover;
 }
+
+/* // let turnos = JSON.parse(localStorage.getItem("turnos"));
+// let turnosDelDia = turnos.find(date => {
+// if(date[i - paddingDays]) return true;
+// });
+// console.log(turnosDelDia)
+// daySquare.innerHTML += `<div class="event">${turnosDelDia[i - paddingDays].length} disponibles</div>`; */
