@@ -14,6 +14,7 @@
   --color4: rgba(131, 255, 131, 0.308);
   --color5: rgba(4, 34, 37, 0.8);
   --color6: rgb(255, 255, 255);
+  --color7: rgb(5, 125, 129);
   --colorLetra: rgb(4, 34, 37);
   --colorContraste: rgb(228, 43, 18);
   --gradiente: linear-gradient(
@@ -118,7 +119,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 15px;
+  margin: 10px;
   transition: transform 500ms ease;
 }
 .card .card-icon {
@@ -389,8 +390,8 @@ input:focus {
 ._._._._._._._._._._._._._._._._._.
 */
 #headerCalendar {
-  padding: 10px;
-  color: var(--colorContraste);
+  padding: 8px;
+  color: var(--color7);
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -407,19 +408,7 @@ input:focus {
 #calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-}
-
-@media (max-width: 400px) {
-  .day {
-    padding: 6%;
-    margin: 6%;
-    box-shadow: 0% 0% 5% rgb(161, 161, 161);
-    height: 50px;
-    font-size: 0.6rem;
-  }
-  .titulo > h3 {
-    font-size: 1.5rem;
-  }
+  overflow: hidden;
 }
 
 .day {
@@ -428,10 +417,11 @@ input:focus {
   box-sizing: border-box;
   background-color: rgb(243, 243, 243);
   margin: 5px;
-  box-shadow: 0px 0px 3px rgb(161, 161, 161);
+  box-shadow: 0px 0px 3px rgba(4, 34, 37, 0.733);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: var(--colorLetra);
 }
 
 .day + .currentDay {
@@ -447,11 +437,8 @@ input:focus {
 }
 
 .event {
-  font-size: 10px;
-  padding: 3px;
-  background-color: var(--color5);
-  color: white;
-  border-radius: 5px;
+  font-size: 0.7rem;
+  color: var(--colorLetra);
   max-height: 55px;
   overflow: hidden;
 }
@@ -459,6 +446,37 @@ input:focus {
   cursor: default !important;
   background-color: rgb(228, 228, 228) !important;
   box-shadow: none !important;
+}
+
+
+@media (max-width: 450px) {
+  #headerCalendar > div {
+    display: flex;
+    flex-flow: column;
+    justify-content: end;
+  }
+  #headerCalendar > div > button{
+    margin: 2px;
+  }
+  .day {
+    padding: 6%;
+    margin: 6%;
+    box-shadow: 0% 0% 5% rgb(161, 161, 161);
+    height: 50px;
+    font-size: 0.6rem;
+  }
+  .titulo > h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  #weekdays {
+    width: 80%;
+  }
+  #calendar {
+    width: 80%;
+  }
 }
 
 /*
@@ -487,9 +505,113 @@ input:focus {
   background-size: cover;
 }
 
-/* // let turnos = JSON.parse(localStorage.getItem("turnos"));
-// let turnosDelDia = turnos.find(date => {
-// if(date[i - paddingDays]) return true;
-// });
-// console.log(turnosDelDia)
-// daySquare.innerHTML += `<div class="event">${turnosDelDia[i - paddingDays].length} disponibles</div>`; */
+.formulario {
+  display: grid;
+  gap: 10px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+
+}
+
+.formulario__grupo-input {
+  position:relative;
+}
+
+
+.formulario__input-error {
+  font-size: 12px ;
+  margin-bottom: 0;
+  display: none;
+}
+
+.formulario__input-error-activo {
+  display:block;
+}
+
+.formulario__validacion-estado {
+  position:absolute;
+  right:10px;
+  bottom: 15px;
+  z-index: 100;
+  font-size: 16px;
+  display: none;
+  
+}
+
+.formulario__mensaje {
+  height: 45px;
+  line-height: 45px;
+  background: #f66060;
+  padding: 0 15px;
+  border-radius: 3px;
+  display: none;
+
+}
+
+.formulario__mensaje-activo {
+  display: block;
+}
+
+.formulario__mensaje p {
+  margin: 0px;
+}
+
+.formulario__grupo-btn-enviar {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+
+}
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.formulario__mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+
+
+.formulario__mensaje-exito-activo {
+  display:block;
+}
+
+/*Estilos validacion*/
+
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}

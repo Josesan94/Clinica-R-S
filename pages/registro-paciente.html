@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clínica R&S</title>
+    <title>Registro paciente - Clínica R&S</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -75,14 +75,14 @@
               class="mx-3 menuPag letraContraste py-2 ps-4"
               style="text-decoration: none; color: var(--colorLetra)"
               aria-current="page"
-              href="/pages/loginPaciente.html"
+              href="/pages/login-paciente.html"
               >Soy Paciente</a
             >
             <a
               class="mx-3 menuPag letraContraste py-2 ps-4"
               style="text-decoration: none; color: var(--colorLetra)"
               aria-current="page"
-              href="/pages/loginProfesional.html"
+              href="/pages/login-profesional.html"
               >Soy Profesional</a
             >
           </div>
@@ -135,26 +135,36 @@
               style="background: var(--color6)"
             >
               <div class="row titulo"><h3>Registro</h3></div>
+              
               <div
                 class="row d-flex justify-content-center align-content-center"
               >
-                <form class="row g-3" id="myForm">
-                  <div class="col-md-12">
+                <form  action="" class="row g-3 f  formulario" id="myForm">
+                  <!-- Grupo: Nombre y apellido -->
+                  <div class="col-md-12 formulario__grupo" id="grupo__nombre">
                     <label for="inputName" class="form-label"
                       >Nombre y Apellido</label
                     >
+                    <div class="formulario__grupo-input">
                     <input
                       type="text"
                       class="form-control"
+                      name="nombre"
                       id="name"
-                      placeholder="Nombre Apellido"
-                      required
+                      placeholder="José Santillán"                     
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-xl-6 col-12">
+                  <p class="formulario__input-error">Coloque su nombre correctamente</p>
+                  </div>
+                  
+                  <!-- Grupo: Nacimiento -->
+
+                  <div class="col-xl-6 col-12 formulario__grupo" id="grupo__nacimiento">
                     <label for="inputDate" class="form-label"
                       >Fecha de Nacimiento</label
                     >
+                    <div class="form-nacimiento">
                     <input
                       type="date"
                       name="date"
@@ -162,79 +172,129 @@
                       class="form-control"
                       required
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
+                  </div>
+                  <!-- Grupo: genero -->
                   <div class="col-xl-6 col-12">
                     <label for="inputState" class="form-label">Sexo</label>
-                    <select id="gender" class="form-select" name="gender">
+                    <div class="form-gender">
+                    <select id="gender" class="form-select" name="gender" required>
                       <option selected>Mujer</option>
                       <option value="male">Hombre</option>
                       <option value="female">Prefiero no especificar</option>
                     </select>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-md-12">
-                    <label for="inputEmail" class="form-label">Email</label>
+                  </div>
+                  <!-- Grupo: email -->
+                  <div class="col-md-12 formulario__grupo" id="grupo__correo">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="formulario__grupo-input">
                     <input
                       type="email"
                       class="form-control"
-                      id="email"
-                      required
-                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                      name="correo"
+                      id="correo"
+                      placeholder="correo@correo.com"                      
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-md-6">
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                  </div>
+                  
+
+                  <!-- Grupo: contraseña -->
+                  <div class="col-md-6 formulario__grupo" id="grupo__password">
                     <label for="inputPassword" class="form-label"
                       >Contraseña</label
                     >
+                    <div class="formulario__grupo-input">
                     <input
                       type="password"
                       class="form-control"
                       id="password"
-                      required
+                      name="password"                      
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-md-6">
+                  <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                  </div>
+                  
+                  <!-- Grupo: Repetir contraseña -->
+                  <div class="col-md-6 formulario__grupo" id="grupo__password2">
                     <label for="repeatPassword" class="form-label"
                       >Repetir Contraseña</label
                     >
+                    <div class="formulario__grupo-input">
                     <input
                       type="password"
                       class="form-control"
-                      id="repeatPassword"
-                      required
+                      id="password2"
+                      name="password2"
+                     
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="inputCity" class="form-label">Dirección</label>
+                  <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+                  </div>
+                  
+                  <!-- Grupo: direccion -->
+                  <div class="col-xl-6 col-12 formulario__grupo" id="grupo__direction">
+                    <label for="inputName" class="form-label">Dirección</label>
+                    <div class="formulario__grupo-input">
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="direction"
+                    id="direction"                                         
+                    />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                  </div>
+                  <p class="formulario__input-error">Coloque bien la dirección</p>
+                  </div>
+                  <!-- Grupo: Teléfono -->
+                  <div class="col-xl-6 col-12 formulario__grupo" id="grupo__telefono">
+                    <label for="inputTel" class="form-label">Teléfono</label>
+                    <div class="formulario__grupo-input">
                     <input
                       type="text"
                       class="form-control"
-                      id="address"
-                      required
-                    />
-                  </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="inputTel" class="form-label">Teléfono</label>
-                    <input
-                      type="tel"
                       name="telefono"
                       id="phone"
-                      class="form-control"
-                      required
+                      placeholder="381512323"
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-md-12">
+                  <p class="formulario__input-error">Debe contener solo numeros</p>
+                  </div>
+                  <!-- Grupo: Obra social -->
+                  <div class="col-md-12 formulario__grupo" id="grupo__Obrasocial">
                     <label for="socSec" class="form-label">Obra Social</label>
+                    <div class="formulario__grupo-input">
                     <input
                       type="text"
                       class="form-control"
                       id="socSec"
-                      required
+                      name="Obrasocial"
+                      
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-outline-secondary">
+                  <p class="formulario__input-error">Coloque una obra social valida</p>
+                  </div>
+                  
+
+                  <div class="col-12 formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                  </div>
+
+                  <div class="col-12 formulario__grupo formulario__grupo-btn-enviar">
+                    <button  type="submit" class="formulario__btn" id="enviar">
                       Enviar
                     </button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Registro exitoso! Sera redireccionado/a al login del sitio</p>
+
                   </div>
                 </form>
               </div>
@@ -352,6 +412,8 @@
       integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
       crossorigin="anonymous"
     ></script>
-    <script src="/Js/script-registro-usuario.js"></script>
+     <script src="/Js/script-registro-usuario.js"></script>
+    <script src="/Js/form-validation-paciente.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
   </body>
 </html>

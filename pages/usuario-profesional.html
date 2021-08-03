@@ -35,7 +35,7 @@
     .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
     ._._._._._._._._._._._._._._._._._. -->
 
-    <div id="INICIO" style="height: 80px"></div>
+    <div id="INICIO" style="height: 96px"></div>
 
     <nav
       class="navbar navbar-expand-lg fixed-top navbar-light navegador"
@@ -99,18 +99,6 @@
     ._._._._._._._._._._._._._._._._._. -->
 
     <main>
-      <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-      ._._._._._._._._._._._._._._._._._._._.
-                PORTADA SECTION
-      .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-      ._._._._._._._._._._._._._._._._._. -->
-
-      <img
-        src="/assets/images/loginUsuarioProfesional/Profesional.png"
-        alt=""
-        class="w-100"
-      />
-
       <div class="container">
         <div class="row m-2">
           <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
@@ -128,13 +116,10 @@
               flex-column
             "
           >
-            <!--.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-                    NEW APPOINTMENTS SECTION
-            ._._._._._._._._._._._._._._._._._. -->
             <section
               class="
                 row
-                m-2
+                my-2
                 p-2
                 d-flex
                 justify-content-center
@@ -144,138 +129,9 @@
               "
               style="background: var(--color6)"
             >
-              <div class="row titulo"><h3>Calendario</h3></div>
+              <div class="row titulo"><h3>Turnos Otorgados</h3></div>
 
-              <div class="row d-flex flex-column justify-content-center">
-                <div id="headerCalendar">
-                  <div id="monthDisplay"></div>
-                  <div>
-                    <button id="backButton" class="btn btn-outline-secondary">
-                      Anterior
-                    </button>
-                    <button id="nextButton" class="btn btn-outline-secondary">
-                      Siguiente
-                    </button>
-                  </div>
-                </div>
-
-                <div id="weekdays" class="d-flex justify-content-around">
-                  <div>Domingo</div>
-                  <div>Lunes</div>
-                  <div>Martes</div>
-                  <div>Miércoles</div>
-                  <div>Jueves</div>
-                  <div>Viernes</div>
-                  <div>Sábado</div>
-                </div>
-
-                <div id="calendar" class="pb-4"></div>
-              </div>
-            </section>
-            <section
-              class="
-                row
-                m-2
-                p-2
-                d-flex
-                justify-content-center
-                align-items-center
-                placaFondo
-                w-100
-              "
-              style="background: var(--color6)"
-            >
-              <div class="row titulo" id="hola soy id"><h3>Turnos Otorgados</h3></div>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="exampleModal"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">
-                        Nuevo turno
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form class="row g-3 d-flex flex-column" id="myForm">
-                        <div
-                          class="
-                            col-xl-6 col-12
-                            d-flex
-                            flex-column
-                            justify-content-center
-                          "
-                        >
-                          <label for="specialty" class="form-label"
-                            >Seleccione una especialidad</label
-                          >
-                          <select
-                            id="specialty"
-                            class="form-select"
-                            name="specialty"
-                          >
-                            <option for="" selected disabled></option>
-                          </select>
-                        </div>
-                        <div class="col-xl-6 col-12">
-                          <label for="professional" class="form-label"
-                            >Seleccione un profesional</label
-                          >
-                          <select
-                            id="professional"
-                            class="form-select"
-                            name="professional"
-                          ></select>
-                        </div>
-                        <div class="col-xl-6 col-12">
-                          <label for="inputState" class="form-label"
-                            >Seleccione un horario</label
-                          >
-                          <select
-                            id="hourAp"
-                            class="form-select"
-                            name="hourAp"
-                          ></select>
-                        </div>
-                        <div class="col-md-12">
-                          <label for="input" class="form-label"
-                            >Detalle síntomas o motivo de la consulta</label
-                          >
-                          <textarea
-                            rows="3"
-                            class="form-control"
-                            id="symptoms"
-                          ></textarea>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Cerrar
-                      </button>
-                      <button type="submit" class="btn btn-danger">
-                        Guardar turno
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div id="turnosOtorgados" class="row d-flex flex-column justify-content-center align-content-center"></div>
             </section>
           </div>
         </div>
@@ -372,6 +228,7 @@
       integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
       crossorigin="anonymous"
     ></script>
-    <script src="/Js/script.js"></script>
+    <script src="/Js/script-usuario-profesional.js"></script>
+    <script src="/Js/auth-professional.js"></script>
   </body>
 </html>

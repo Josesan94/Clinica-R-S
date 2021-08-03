@@ -141,78 +141,136 @@
               <div
                 class="row d-flex justify-content-center align-content-center"
               >
-                <form class="row g-3">
-                  <div class="col-md-12">
+                <form  action="" class="row g-3 f  formulario" id="formProfessional">
+                  <!-- Grupo: Nombre y apellido -->
+                  <div class="col-md-12 formulario__grupo" id="grupo__nombre">
                     <label for="inputName" class="form-label"
                       >Nombre y Apellido</label
                     >
+                    <div class="formulario__grupo-input">
                     <input
                       type="text"
                       class="form-control"
+                      name="nombre"
                       id="name"
-                      placeholder="Nombre Apellido"
+                      placeholder="Rene Favaloro"                     
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-md-12">
-                    <label for="inputEmail" class="form-label">Email</label>
+                  <p class="formulario__input-error">Coloque su nombre correctamente</p>
+                  </div>
+                  
+                  
+                  <!-- Grupo: email -->
+                  <div class="col-md-12 formulario__grupo" id="grupo__correo">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="formulario__grupo-input">
                     <input
                       type="email"
                       class="form-control"
-                      id="email"
-                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                      name="correo"
+                      id="correo"
+                      placeholder="correo@favaloro.com"                      
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-md-6">
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                  </div>
+                  
+
+                  <!-- Grupo: contraseña -->
+                  <div class="col-md-6 formulario__grupo" id="grupo__password">
                     <label for="inputPassword" class="form-label"
                       >Contraseña</label
                     >
-                    <input type="password" class="form-control" id="password" />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="repeatPassword" class="form-label"
-                      >Repetir Contraseña</label
-                    >
+                    <div class="formulario__grupo-input">
                     <input
                       type="password"
                       class="form-control"
-                      id="repeatPassword"
+                      id="password"
+                      name="password"                      
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-xl-6 col-12">
+                  <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                  </div>
+                  
+                  <!-- Grupo: Repetir contraseña -->
+                  <div class="col-md-6 formulario__grupo" id="grupo__password2">
+                    <label for="repeatPassword" class="form-label"
+                      >Repetir Contraseña</label
+                    >
+                    <div class="formulario__grupo-input">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password2"
+                      name="password2"
+                     
+                    />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                  </div>
+                  <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+                  </div>
+                  
+                  <!-- Grupo: Teléfono -->
+                  <div class="col-xl-6 col-12 formulario__grupo" id="grupo__telefono">
                     <label for="inputTel" class="form-label">Teléfono</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      id="phone"
-                      class="form-control"
-                    />
-                  </div>
-                  <div class="col-xl-6 col-12">
-                    <label for="matricula" class="form-label"
-                      >Matricula Profesional</label
-                    >
-                    <input
-                      type="number"
-                      name="regist"
-                      id="regist"
-                      class="form-control"
-                    />
-                  </div>
-                  <div class="col-12">
-                    <label for="specialty" class="form-label"
-                      >Especialdad Médica</label
-                    >
+                    <div class="formulario__grupo-input">
                     <input
                       type="text"
-                      name="specialty"
-                      id="specialty"
                       class="form-control"
+                      name="telefono"
+                      id="phone"
+                      placeholder="381512323"
                     />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                   </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-outline-secondary">
-                      Enviar
-                    </button>
+                  <p class="formulario__input-error">Debe contener solo numeros</p>
+                  </div>
+                  <!-- Grupo: Specialty -->
+                  <div class="col-xl-6 col-12 formulario__grupo" id="grupo__specialty">
+                    <label for="inputState" class="form-label">Especialidad</label>
+                    <div class="form-specialty">
+                    <select id="specialty" class="form-control" name="specialty" required>
+                      <option selected>Clinica</option>
+                      <option value="gastroenterology">gastroenterología</option>
+                      <option value="Ginecology">Ginecología</option>
+                      <option value="Odontology">Odontología</option>
+                      <option value="Otorrinolaringology">Otorrinolaringología</option>
+                      <option value="Pediatry">Pediatría</option>
+                    </select>
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                  </div>
+                  </div>
+
+                  <!-- Grupo: matricula -->
+                  <div class="col-md-6 formulario__grupo" id="grupo__matricule">
+                    <label for="inputmatricula" class="form-label">Matricula profesional</label>
+                    <div class="formulario__grupo-input">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="matricule"
+                      id="matricule"
+                      placeholder="1053332"
+                    />
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                  </div>
+                  <p class="formulario__input-error">La matricula se compone de numeros</p>
+                 </div>
+                  
+              
+                 <div class="col-12 formulario__mensaje" id="formulario__mensaje">
+                  <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                 </div>
+
+                 <div class="col-12 formulario__grupo formulario__grupo-btn-enviar">
+                  <button  type="submit" class="formulario__btn" id="enviar">
+                    Enviar
+                  </button>
+                  <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">¡Registro exitoso! Sera redireccionado/a al login del sitio</p>
+
                   </div>
                 </form>
               </div>
@@ -330,6 +388,8 @@
       integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
       crossorigin="anonymous"
     ></script>
-    <script src="/Js/script.js"></script>
+    <script src="/Js/script-registro-professional.js"></script>
+    <script src="/Js/form-validation-professional.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
   </body>
 </html>
